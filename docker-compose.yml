@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    image: node:16-slim
+    restart: always
+    working_dir: /app
+    command: bash -c "yarn && yarn test"
+    ports:
+      - "3011:3011"
+    volumes:
+      - .:/app
